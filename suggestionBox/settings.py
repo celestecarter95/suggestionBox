@@ -37,6 +37,11 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+	'django.contrib.sites',
+    'kaizen',
+    'userena',
+    'guardian',
+    'easy_thumbnails',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -55,7 +60,7 @@ ROOT_URLCONF = 'suggestionBox.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -87,7 +92,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Denver'
 
 USE_I18N = True
 
@@ -100,3 +105,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+AUTHENTICATION_BACKENDS = (
+    'userena.backends.UserenaAuthenticationBackend',
+    'guardian.backends.ObjectPermissionBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+ANONYMOUS_USER_ID = -1
+
+AUTH_PROFILE_MODULE = 'kaizen.Profile'
+
+SITE_ID = 1
+
+USERENA_SIGNIN_REDIRECT_URL = '/accounts/%(username)s/'
+LOGIN_URL = '/accounts/signin/'
+LOGOUT_URL = '/accounts/signout/'
