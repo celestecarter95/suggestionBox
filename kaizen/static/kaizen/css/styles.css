@@ -1,18 +1,95 @@
-#id_honeypot {
-	display: none;
+body {
+	font-family: 'Open Sans', sans-serif;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+.container {
+	flex: 1;
 }
 
 #id_honeypot {
     display: none;
 }
 
-.navbar-invser {
-	background-color: #404040;
+.navbar-inverse {
+	background-color: rgba(64,64,64,1.0);
 	border: none;
 	border-radius: 0;
+	padding: 10px 5px;
 }
 
-body {
-	color: orange;
-	background-color: purple;
+.navbar-brand {
+	font-size: 40px;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover,
+.navbar-inverse .navbar-brand:hover {
+	color: rgba(222,141,40,1.0);
+}
+
+.navbar-nav>li>a {
+	font-size: 18px;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+a, a:hover {
+	text-decoration: none;
+	color: black;
+}
+
+.marker,
+.kaizen {
+	border: 2px solid rgba(64,64,64,1.0);
+	border-radius: 5px;
+	margin: 20px 0;
+}
+
+.marker h3,
+.kaizen h3 {
+	background-color: rgba(64,64,64,0.5);
+	padding: 10px 40px;
+	margin: 0;
+	border-bottom: 2px solid rgba(64, 64, 64, 1.0);
+}
+
+.marker h4, .marker p, .marker a,
+.kaizen h4, .kaizen p, .kaizen a {
+	padding: 2px 40px;
+	margin: 0;
+}
+
+.marker .status,
+.kaizen .status {
+	float: right;
+	margin: 10px;
+}
+
+.marker .description,
+.kaizen .description {
+	font-size: 18px;
+}
+
+.user {
+	color: rgba(35,186,210,1.0);
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 18px;
+}
+
+span .stats {
+	margin: 0;
+}
+
+.marker h3 {
+	background-color: rgba(222,141,40,0.7);
+}
+
+.edit, .delete {
+	float: left;
+}
+
+.detail_kaizen h1 {
+	font-family: 'Josefin Sans', sans-serif;
 }

@@ -5,10 +5,10 @@
 
 {% block 'content' %}
 
-<div>
+<div class="detail_kaizen">
 	<h1>{{ idea.title }}</h1>
-	<a href="{% url 'kaizen:updateidea' idea.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
-	<a href="{% url 'kaizen:deleteidea' idea.id %}"><span class="glyphicon glyphicon-trash"></span></a>
+	<a class="edit" href="{% url 'kaizen:updateidea' idea.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
+	<a class="delete" href="{% url 'kaizen:deleteidea' idea.id %}"><span class="glyphicon glyphicon-trash"></span></a>
 	<p>Posted by {{ request.user }} on {{ idea.pub_date|date:"M d, Y" }}</p>
 	<p>In category {{ idea.category.title }}</p>
 	<p class="description">{{ idea.description }}</p>
