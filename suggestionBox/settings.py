@@ -116,6 +116,8 @@ ANONYMOUS_USER_ID = -1
 
 AUTH_PROFILE_MODULE = 'kaizen.Profile'
 
+USERENA_ACTIVATION_REQUIRED = False
+
 SITE_ID = 1
 
 USERENA_SIGNIN_REDIRECT_URL = '/accounts/%(username)s/'

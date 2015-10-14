@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block 'title' %}{% if idea %}Update{% else %}Add{% endif %} Idea{% endblock %}
+
+{% block 'content' %}
+
+<form action="." method="post" class="form" role="form">
+	{%csrf_token %}
+	{{ form }}
+	<button class="btn btn-primary">{% if idea %} Update {% else %} Add {% endif %}</button>
+</form>
+
+{% endblock 'content' %}

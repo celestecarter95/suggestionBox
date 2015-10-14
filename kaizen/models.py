@@ -24,7 +24,7 @@ class Idea(models.Model):
     description = models.TextField()
     pub_date = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=3, 
-                choices=STATUS)
+                choices=STATUS, default='new')
     category = models.ForeignKey('Category')
 
     def __unicode__(self):
@@ -35,6 +35,9 @@ class Category(models.Model):
 
     def __unicode__(self):
         return self.title
+
+	class Meta:
+		verbose_name_plural = "categories"
 
 class Comment(models.Model):
     comment_text = models.TextField()

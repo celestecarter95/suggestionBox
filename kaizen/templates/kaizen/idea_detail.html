@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block 'title' %} {{ idea.title }}{% endblock 'title' %}
+
+{% block 'content' %}
+
+<div>
+	<h1>{{ idea.title }}</h1>
+	<a href="{% url 'kaizen:updateidea' idea.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
+	<a href="{% url 'kaizen:deleteidea' idea.id %}"><span class="glyphicon glyphicon-trash"></span></a>
+	<p>Posted by {{ request.user }} on {{ idea.pub_date|date:"M d, Y" }}</p>
+	<p>In category {{ idea.category.title }}</p>
+	<p class="description">{{ idea.description }}</p>
+</div>
+
+{% endblock 'content' %}
