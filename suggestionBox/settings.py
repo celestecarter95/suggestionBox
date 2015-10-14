@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'userena',
     'guardian',
     'easy_thumbnails',
+	'django_comments',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -105,6 +106,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATICFILES_DIRS = (
+	os.path.join(BASE_DIR, 'kaizen', 'static', 'kaizen'),
+)
 
 AUTHENTICATION_BACKENDS = (
     'userena.backends.UserenaAuthenticationBackend',

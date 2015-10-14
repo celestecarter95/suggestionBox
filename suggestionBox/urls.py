@@ -19,5 +19,6 @@ from django.contrib import admin
 urlpatterns = [
 	url(r'^', include('kaizen.urls', namespace='kaizen')),
     url(r'^accounts/', include('userena.urls')),
+	url(r'^comments/', include('django_comments.urls')),
     url(r'^admin/', include(admin.site.urls)),
 ]

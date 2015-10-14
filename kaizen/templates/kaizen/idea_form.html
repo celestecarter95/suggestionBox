@@ -6,7 +6,17 @@
 
 <form action="." method="post" class="form" role="form">
 	{%csrf_token %}
-	{{ form }}
+	{% for field in form %}
+		{% ifequal field.auto_id "id_status" %}
+			{% if request.user.is_superuser %}
+				{{ field.label_tag }}
+				{{ field }}
+			{% endif %}
+		{% else %}
+			{{ field.label_tag }}
+			{{ field }}
+		{% endifequal %}
+	{% endfor %}
 	<button class="btn btn-primary">{% if idea %} Update {% else %} Add {% endif %}</button>
 </form>
 

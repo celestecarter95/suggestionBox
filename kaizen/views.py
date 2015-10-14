@@ -75,7 +75,7 @@ class SecretView(TemplateView):
 class CreateIdeaView(CreateView):
 	#template_name is "kaizen/idea_form.html"
 	model = Idea
-	fields = ['title', 'description', 'category']
+	fields = ['title', 'description', 'category', 'status']
 	success_url = reverse_lazy('kaizen:idealist')
 
 	def form_valid(self, form):

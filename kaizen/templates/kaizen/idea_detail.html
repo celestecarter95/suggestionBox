@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load comments %}
 
 {% block 'title' %} {{ idea.title }}{% endblock 'title' %}
 
@@ -12,5 +13,21 @@
 	<p>In category {{ idea.category.title }}</p>
 	<p class="description">{{ idea.description }}</p>
 </div>
+
+{% get_comment_count for idea as comment_count %}
+{% render_comment_list for idea %}
+
+{% get_comment_form for idea as form %}
+<form action="{% comment_form_target %}" method="post" class="form" role="for">
+	{% csrf_token %}
+	{{ form.comment }}
+    {{ form.honeypot }}
+    {{ form.content_type }}
+    {{ form.object_pk }}
+    {{ form.timestamp }}
+    {{ form.security_hash }}
+	<input type="hidden" name="next" value="{% url 'kaizen:ideadetail' idea.id %}" />
+	<input type="submit" value="Add comment" id="id_submit" />
+</form>
 
 {% endblock 'content' %}
