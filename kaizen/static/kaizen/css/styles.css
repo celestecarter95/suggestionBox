@@ -55,6 +55,10 @@ a, a:hover {
 	border-bottom: 2px solid rgba(64, 64, 64, 1.0);
 }
 
+.marker h3 {
+	background-color: rgba(222,141,40,0.7);
+}
+
 .marker h4, .marker p,
 .kaizen h4, .kaizen p {
 	padding: 2px 40px;
@@ -86,10 +90,6 @@ a, a:hover {
 	font-weight: 700;
 }
 
-.marker h3 {
-	background-color: rgba(222,141,40,0.7);
-}
-
 .edit, .delete {
 	font-size: 15px;
 }
@@ -119,8 +119,14 @@ textarea {
 }
 
 .btn {
-	display: block;
 	margin: 10px 0;
+}
+
+.btn-default:focus,
+.btn-default:hover {
+	background-color: rgba(35,186,210,0.8);
+	border: rgba(35,186,210,0.8);
+	color: rgba(255,255,255,1.0);
 }
 
 .btn-default {
@@ -128,11 +134,43 @@ textarea {
 	border: rgba(35,186,210,1.0);
 }
 
+.btn-primary:focus,
+.btn-primary:hover {
+	background-color: rgba(222,141,40,0.8);
+	border: rgba(222,141,40,0.8);
+	color: rgba(255,255,255,1.0);
+}
+
+.btn-primary {
+	background-color: rgba(222,141,40,1.0);
+	border: rgba(222,141,40,1.0);
+	color: black;
+}
+
+input[type="password"],
 input[type="text"], textarea {
 	display: block;
 	width: 100%;
 	border-radius: 4px;
 	border: 2px inset;
+	background-color: rgba(255,255,255,1.0);
+}
+
+form {
+	background-color: rgba(64,64,64,1.0);
+	border-radius: 5px;
+	color: rgba(157,157,157,1.0);
+	padding: 40px;
+}
+
+legend {
+	color: rgba(157,157,157,1.0);
+}
+
+.forgot-password a,
+.forgot-password a:hover {
+	color: rgba(157,157,157,1.0);
+	color: rgba(222,141,40,1.0);
 }
 
 footer {

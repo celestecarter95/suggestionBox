@@ -9,16 +9,26 @@
 	{% for field in form %}
 		{% ifequal field.auto_id "id_status" %}
 			{% if request.user.is_superuser %}
+				<h3>Change the Status</h3>
+				<hr>
 				<div class="form-group">
 				{{ field.label_tag }}
 				{{ field }}
 				</div>
+			{% else %}
+				<h3>Only Admin Can Change the Status of an Idea</h3>
+				<hr>
 			{% endif %}
 		{% else %}
+			{% ifequal field.auto_id "id_title" %}
+				<h3>Suggestion an Idea</h3>
+				<hr>
+			{% endifequal %}
 			{{ field.label_tag }}
 			{{ field }}
 		{% endifequal %}
 	{% endfor %}
+	<br>
 	<button class="btn btn-primary">{% if idea %} Update {% else %} Add {% endif %}</button>
 </form>
 
