@@ -4,13 +4,15 @@
 
 {% block 'content' %}
 
-<form action="." method="post" class="form" role="form">
+<form action="." method="post" class="form idea_form" role="form">
 	{%csrf_token %}
 	{% for field in form %}
 		{% ifequal field.auto_id "id_status" %}
 			{% if request.user.is_superuser %}
+				<div class="form-group">
 				{{ field.label_tag }}
 				{{ field }}
+				</div>
 			{% endif %}
 		{% else %}
 			{{ field.label_tag }}

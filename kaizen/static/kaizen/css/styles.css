@@ -87,9 +87,54 @@ span .stats {
 }
 
 .edit, .delete {
-	float: left;
+	font-size: 15px;
 }
 
 .detail_kaizen h1 {
 	font-family: 'Josefin Sans', sans-serif;
+	border-bottom: 2px solid rgba(64,64,64, 1.0);
 }
+
+.detail_kaizen .description {
+	background-color: rgba(64,64,64,0.3);
+	border-radius: 5px;
+	padding: 15px;
+}
+
+
+.comment_form {
+	background-color: rgba(64,64,64,1.0);
+	color: rgba(157,157,157,1.0);
+	padding: 15px;
+	border-radius: 5px;
+}
+
+textarea {
+	width: 100%;
+	height: 100px;
+}
+
+.btn {
+	display: block;
+	margin: 10px 0;
+}
+
+.btn-default {
+	background-color: rgba(35,186,210,1.0);
+	border: rgba(35,186,210,1.0);
+}
+
+input[type="text"], textarea {
+	display: block;
+	width: 100%;
+	border-radius: 4px;
+	border: 2px inset;
+}
+
+footer {
+	background-color: rgba(64,64,64,1.0);
+	color: rgba(157,157,157,1.0);
+	margin-top: 20px;
+	padding-top: 20px;
+}
+

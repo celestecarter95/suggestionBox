@@ -80,6 +80,7 @@ class CreateIdeaView(CreateView):
 
 	def form_valid(self, form):
 		profile = Profile();
+		profile = Profile.objects.filter(user = self.request.user)[0]
 		profile.user = self.request.user
 		profile.save()
 		idea = form.save(commit=False)
@@ -90,7 +91,12 @@ class CreateIdeaView(CreateView):
 class UpdateIdeaView(UpdateView):
 	#template_name is "kaizen/idea_form.html"
 	model = Idea
-	fields = ['profile', 'title', 'description', 'status', 'category']
+	fields = ['title', 'description', 'status', 'category']
+	success_url = reverse_lazy('kaizen:idealist')
+
+class UpdateStatusView(UpdateView):
+	model = Idea
+	fields = ['status']
 	success_url = reverse_lazy('kaizen:idealist')
 
 class DeleteIdeaView(DeleteView):

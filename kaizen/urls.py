@@ -11,5 +11,5 @@ urlpatterns = [
 	url(r'^idea/add/$', login_required(views.CreateIdeaView.as_view()), name='addidea'),
 	url(r'^idea/update/(?P<pk>[0-9]+)/$', login_required(views.UpdateIdeaView.as_view()), name='updateidea'),
 	url(r'^idea/delete/(?P<pk>[0-9]+)/$', login_required(views.DeleteIdeaView.as_view()), name='deleteidea'),
-	#url(r'^ccounts/signin/$', views.SignInKaizenForm.as_view(), name='kaizen_signin'),
+	url(r'^status/(?P<pk>[0-9]+)/$', login_required(views.UpdateStatusView.as_view()), name='updatestatus'),
 ]
