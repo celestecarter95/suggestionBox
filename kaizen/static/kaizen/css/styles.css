@@ -55,8 +55,8 @@ a, a:hover {
 	border-bottom: 2px solid rgba(64, 64, 64, 1.0);
 }
 
-.marker h4, .marker p, .marker a,
-.kaizen h4, .kaizen p, .kaizen a {
+.marker h4, .marker p,
+.kaizen h4, .kaizen p {
 	padding: 2px 40px;
 	margin: 0;
 }
@@ -78,8 +78,12 @@ a, a:hover {
 	font-size: 18px;
 }
 
-span .stats {
+.stats {
 	margin: 0;
+	color: rgba(28,153,173,1.0);
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 18px;
+	font-weight: 700;
 }
 
 .marker h3 {
